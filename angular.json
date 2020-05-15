@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "StreamHD": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "StreamHD"
+    }
+  },
+  "defaultProject": "StreamHD",
+  "cli": {
+    "analytics": "0e01a2d7-d38e-4c93-bc84-196ea3b3f71f"
+  }
 }

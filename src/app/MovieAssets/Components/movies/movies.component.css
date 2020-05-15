@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+box-sizing: border-box;
+}
+form.example input[type=text] {
+padding: 10px;
+font-size: 17px;
+border: 1px solid grey;
+float: left;
+width: 80%;
+background: #f1f1f1;
+}
+form.example button {
+float: left;
+width: 20%;
+padding: 10px;
+background: #0078b4;
+color: white;
+font-size: 30px;
+border: 1px solid grey;
+border-left: none;
+cursor: pointer;
+}
+form.example button:hover {
+background: #0089d0;
+}
+form.example::after {
+content: "";
+clear: both;
+display: table;
+}
+
+#modal-body{
+background-color: black;
+}
+
+.modal-open .container-fluid, .modal-open  .background-container {
+    -webkit-filter: blur(15px) grayscale(90%);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(40px);
+    backdrop-filter: blur(5px);
+   background-color: #01223770 !important;
+
+}
+.carousel-inner{
+    margin-top: 50px !important ;
+}
