@@ -219,3 +219,23 @@ body{
   .navbar-toggler{
     background-color: white !important;
 }
+
+
+
+.movie-1 {
+  /* background: transparent;
+  border-color: #0089d0 !important;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 315px;
+  margin: 2em;
+  border-radius: 10px;
+  display: inline-block; */
+}
+
+.movie-1:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+}
+

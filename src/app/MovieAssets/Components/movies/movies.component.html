@@ -291,9 +291,12 @@
 
 
 <div class="container-fluid">
+  
     <div class="row"> 
       <div *ngFor="let movies of Movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        <div class="movie-1">
         <img class="material-icons header-icon" src="https://image.tmdb.org/t/p/original{{movies.poster_path}}"  class="img-fluid" style="min-width: 100%;">
+        </div>
       </div>
 
     </div>
