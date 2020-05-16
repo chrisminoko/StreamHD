@@ -1,3 +1,4 @@
+
 export interface Movie {
     popularity:number;
     vote_count:number;
@@ -14,4 +15,5 @@ export interface Movie {
     vote_average:number;
     overview:string;
     release_date:Date;
+ 
 }

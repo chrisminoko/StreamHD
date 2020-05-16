@@ -269,6 +269,7 @@
                        margin-left: auto; margin-right: auto; text-align:left; font-size: 2.0em; padding-left: 15px; font-family: Montserrat,sans-serif;">
                     <button type="button" onclick="" style="height: 80px;margin-top: 30px;"><i class="fa fa-search"></i></button>
                  </form>
+                 
             </div>
             <div class="col-md-2">
     
@@ -277,3 +278,23 @@
     </div>
     </section> 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+    <div class="row"> 
+      <div *ngFor="let movies of Movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        <img class="material-icons header-icon" src="https://image.tmdb.org/t/p/original{{movies.poster_path}}"  class="img-fluid" style="min-width: 100%;">
+      </div>
+
+    </div>
+    </div>

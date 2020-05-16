@@ -48,3 +48,22 @@ background-color: black;
 .carousel-inner{
     margin-top: 50px !important ;
 }
+
+
+.row > div {
+    padding: 0 4px !important;
+}
+
+img {
+  margin-top: 8px;
+  vertical-align: middle;
+
+}
+
+
+
+
+
+
+
+
