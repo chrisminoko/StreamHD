@@ -231,11 +231,13 @@ body{
   margin: 2em;
   border-radius: 10px;
   display: inline-block; */
+  text-align: center;
 }
 
 .movie-1:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  color: white;
 }
 
