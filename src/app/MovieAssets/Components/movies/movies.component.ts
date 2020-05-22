@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Movie} from '../Models/Movie';
 import {MovieService} from '../Service/movie.service';
 import { from } from 'rxjs';
-import { Title } from '@angular/platform-browser';
-
+import { Title, SafeUrl,DomSanitizer } from '@angular/platform-browser';
+import {HttpClient} from '@angular/common/http'
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -11,28 +11,31 @@ import { Title } from '@angular/platform-browser';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor(private movieService:MovieService) { }
+
+  constructor(private movieService:MovieService,private sanitizer:DomSanitizer,private http:HttpClient) { }
   Searchterm:string;
   term = '';
   id:number;
   movies :string;
   Movies:Movie[];
   title:string;
-  key ='8qsByFloihIwl9FD';
-  secret_key='33b0zafz3f4m8km2tkpnpun7pxw0v1';
+  private key ='8qsByFloihIwl9FD';
+  private secret_key='33b0zafz3f4m8km2tkpnpun7pxw0v1';
+  newUrl:any;
+  url:string;
   ipAddress:string; 
-  uniqueUrl:string;
+  uniqueUrl:any;
   
 
   ngOnInit(): void {
     this.loadDefualtMovies();
     this.search(this.term);
-    this.getIP();
-    this.getUniqueUrl();
-   
+    this.getUserIP();
+  
+    
   }
   
-
+ 
   loadDefualtMovies():void{
     this.movieService.getDeFaultMovies().subscribe((data:any)=>{
       this.Movies=data.results;
@@ -49,23 +52,32 @@ export class MoviesComponent implements OnInit {
   }
 
 
-  getId(id:number){
-    this.id=id;
-  }
-
-  getIP(){
+  getUserIP(){
     this.movieService.getUserIp().subscribe((res:any)=>{
       this.ipAddress=res.ip;
-   
+      console.log("IP address:",this.ipAddress)
     });
   }
 
+  getMovieId(id:number){
+    this.id=id;
+    console.log("Movie ID",this.id);
+   
+  }
 
-  getUniqueUrl(){
-    this.movieService.GetUniqueUrl().subscribe((res:any)=>{
-      this.uniqueUrl=res;
-      console.log("generated Url",this.uniqueUrl)
+
+
+
+  GetVideoUrl(){
+    this.movieService.getMovieUrl(this.id,this.ipAddress).subscribe((data:any)=>{
+    this.uniqueUrl=this.sanitizer.bypassSecurityTrustResourceUrl(data)
+    console.log("Retrived URL :",this.uniqueUrl)
     })
   }
+
+  SanitizeURl(){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.uniqueUrl)
+  }
+
 
 }
