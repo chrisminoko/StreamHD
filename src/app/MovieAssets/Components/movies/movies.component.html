@@ -356,17 +356,16 @@
                                 </div>
                                 <div class="col-md-9" style="color: white !important;">
                                     <p style="color: white;">{{movies.overview}}</p>
-                                    <p style="color: white;">{{newUrl}}</p>
+                                   
                                     <button type="button btn btn-primary" id="button_play" class="btn">
                                         <i class="fa fa-play green-text"></i> Play
                                     </button>                                                          
-                                   
-                                    <iframe  [src]="uniqueUrl" frameborder="0"></iframe>
+                                
                                 </div>
 
                                
+                                
                             
-                              
 
                             </div>
 
@@ -379,5 +378,6 @@
         </div>
     </div>
 
+    <iframe  height="1020" width="720" [src]="newUrl" frameborder="0"></iframe>
 
-  <!-- <iframe  height="1020" width="720" [src]="SanitizeURl()" frameborder="0"></iframe>  -->
+  <!-- <iframe  [src]="SanitizeURl()" frameborder="0"></iframe>  -->

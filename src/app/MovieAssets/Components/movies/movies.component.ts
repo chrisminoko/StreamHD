@@ -21,6 +21,7 @@ export class MoviesComponent implements OnInit {
   title:string;
   private key ='8qsByFloihIwl9FD';
   private secret_key='33b0zafz3f4m8km2tkpnpun7pxw0v1';
+  urlStream='https://fsapi.xyz/tmdb-movie/';
   newUrl:any;
   url:string;
   ipAddress:string; 
@@ -62,7 +63,8 @@ export class MoviesComponent implements OnInit {
   getMovieId(id:number){
     this.id=id;
     console.log("Movie ID",this.id);
-   
+    this.SanitizeURl(this.id);
+    this.GetVideoUrl();
   }
 
 
@@ -70,13 +72,15 @@ export class MoviesComponent implements OnInit {
 
   GetVideoUrl(){
     this.movieService.getMovieUrl(this.id,this.ipAddress).subscribe((data:any)=>{
-    this.uniqueUrl=this.sanitizer.bypassSecurityTrustResourceUrl(data)
+    this.uniqueUrl=data
+
     console.log("Retrived URL :",this.uniqueUrl)
     })
   }
 
-  SanitizeURl(){
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.uniqueUrl)
+  SanitizeURl(id:number){
+   this.newUrl= this.sanitizer.bypassSecurityTrustResourceUrl(this.urlStream+`${id}`);
+    // console.log("New URL:",this.urlStream+`${id}`)
   }
 
 
