@@ -41,6 +41,7 @@ export class MoviesComponent implements OnInit {
   loadDefualtMovies():void{
     this.movieService.getDeFaultMovies().subscribe((data:any)=>{
       this.Movies=data.results;
+      console.log(this.Movies);
   
     })
   }
