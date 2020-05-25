@@ -280,8 +280,7 @@
 
         <h1 style="color: white; font-weight: bolder;" class="text-center">TRENDING <span
                 style="background-color:dodgerblue;">MOVIES</span></h1>
-                <button class="sticky" data-toggle="modal" data-target="#UniSearch" type="button"
-                class="btn btn-outline-primary">WEB SEARCH</button>
+               
 
 
         <!-- Search Bar Section -->
@@ -299,6 +298,10 @@
                        margin-left: auto; margin-right: auto; text-align:left; font-size: 2.0em; padding-left: 15px; font-family: Montserrat,sans-serif;">
                             <button (click)="checkSearch()" type="button" style="height: 80px;margin-top: 30px;"><i
                                     class="fa fa-search"></i></button>
+
+
+                            <button data-toggle="modal" data-target="#myModal"  type="button" style="height: 80px;margin-top: 30px;"><i
+                                    class="fa fa-film"></i></button>
                         </form>
 
                     </div>
@@ -425,3 +428,27 @@
         </div>
     </div>
     <!-- Modal -->
+
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content"  style="background-color: black !important; box-shadow: blue;  border-bottom: blue !important;">
+                <div class="modal-header">
+                    <div data-dismiss="modal" aria-label="Close" class="icon-box">
+                        <i class="material-icons">&#xE888;</i>
+                        
+                    </div>				
+                    <h4 style="color: orangered !important;" class="modal-title">Warning!</h4>	
+                </div>
+                <div class="modal-body" >
+                    <p style="color: white;" class="text-center">Please note that by using the external web search you might be
+                        exposed to certain adds that some viewers may find sensitive.
+                    </p>
+                  
+                </div>
+                <div class="modal-footer">
+                    <button  data-toggle="modal" data-target="#UniSearch" class="btn btn-success btn-block" data-dismiss="modal">CONFRIM</button>
+                </div>
+            </div>
+        </div>
+    </div> 
