@@ -73,5 +73,12 @@ img {
     background:rgb(0, 0, 0);
 }
 
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 
+    padding: 50px;
+    font-size: 20px;
+  }
 
